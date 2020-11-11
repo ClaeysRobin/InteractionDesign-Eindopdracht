@@ -319,12 +319,14 @@ input::placeholder {
 
 .c-earth{
     position: absolute;
-    top: 50%;
+    top: 110%;  /* stond op 50%*/
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: var(--sun-width);
-    height: var(--sun-height);
+    /* width: var(--sun-width);
+    height: var(--sun-height); */
+
+    width: 110%;
 
     
 }
@@ -341,15 +343,45 @@ input::placeholder {
 
 }
 
+.c-astroidcontainer{
+    position: absolute;
+    bottom: 25%;
+    width: 100%;
+}
+
 /*
     Component: UFO
     ---
     The UFO
 */
-
 .c-ufo{
     width: var(--ufo-width);
     height: var(--ufo-height);
+}
+
+.c-ufo-move{
+    position: relative;
+    height: 100%;
+    width:100%;
+
+    animation-name: UFO-float;
+    animation-duration: 75s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes UFO-float {
+    0%   {left:5%; top:0px;}
+    10%  {left:25%; top:-100px;}
+    20%  {left:55%; top:-250px;}
+    30%  {left:5%; top:-400px;}
+    40%  {left:10%; top:-375px;}
+    50%  {left:80%; top:-300px;}
+    60%  {left:50%; top:-150px;}
+    70%  {left:55%; top:-175px;}
+    80%  {left:95%; top:-50px;}
+    90%  {left:45%; top:-30px;}
+    100% {left:5%; top:0px;}
+    
 }
 
 /*

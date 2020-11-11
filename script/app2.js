@@ -64,7 +64,10 @@ let placeSunAndStartMoving = (totalMinutes, sunrise) => {
 
 // 3 Met de data van de API kunnen we de app opvullen
 let showResult = queryResponse => {
-	console.log({queryResponse});
+	// console.log({queryResponse});
+	// console.log(`${queryResponse.near_earth_objects[0].close_approach_data[0].miss_distance.lunar}`)
+
+	
 
 	// const astroids = document.querySelector('.js-astroids');
 	
@@ -76,38 +79,36 @@ let showResult = queryResponse => {
 
 	// get top 10 astroids
 	var i;
+	var leftspace = -10;
 	for (i = 0; i < 10; i++){
-		console.log(`${queryResponse.near_earth_objects[i].name_limited}`)
+		// console.log(`${queryResponse.near_earth_objects[i].name_limited}`)
+
+		// get afstand astroids
+		const afstand = `${queryResponse.near_earth_objects[i].close_approach_data[0].miss_distance.kilometers}`
 
 		const space = document.querySelector(`.js-space` + i);
 
-		// math.rondom = getal tussen 0 en 1 daarom * 100
-		space.setAttribute('style', `bottom: ${Math.random()*100}%; left: ${Math.random()*100}%;`);
+		// plaats de astroiden
+		space.setAttribute('style', `bottom: ${afstand/200000}px; left:  ${leftspace += 10}%;`);
 		
 		space.innerHTML = `<a href="www.mywebsite.com/next.html"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
 	}
 
-	 
-	 
+	// var x;
+	// for (x = 5; x < 10; x++){
+	// 	console.log(`${queryResponse.near_earth_objects[x].name_limited}`)
 
+	// 	// get afstand astroids
+	// 	const afstand = `${queryResponse.near_earth_objects[x].close_approach_data[0].miss_distance.lunar}`
 
+	// 	const space = document.querySelector(`.js-space` + x);
 
+	// 	// math.rondom = getal tussen 0 en 1 daarom * 100
+	// 	space.setAttribute('style', `bottom: ${afstand}px; left:  ${Math.random()*100}%;`);
+		
+	// 	space.innerHTML = `<a href="www.mywebsite.com/next.html"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
+	// }
 
-
-
-
-
-	// // We gaan eerst een paar onderdelen opvullen
-	// // Zorg dat de juiste locatie weergegeven wordt, volgens wat je uit de API terug krijgt.
-	// document.querySelector('.js-location').innerText = `${queryResponse.city.name},${queryResponse.city.country}`;
-	// // Toon ook de juiste tijd voor de opkomst van de zon en de zonsondergang.
-	// document.querySelector('.js-sunrise').innerText = _parseMilliseconds( queryResponse.city.sunrise);
-	// document.querySelector('.js-sunset').innerText = _parseMilliseconds(queryResponse.city.sunset);
-	// // Hier gaan we een functie oproepen die de zon een bepaalde positie kan geven en dit kan updaten.
-	// // Geef deze functie de periode tussen sunrise en sunset mee en het tijdstip van sunrise.
-	// const timeDifference = ((queryResponse.city.sunset - queryResponse.city.sunrise) / 60); 
-	
-	// placeSunAndStartMoving(timeDifference, queryResponse.city.sunrise)
 };
 
 // 2 Ophalen van de NASA API 
