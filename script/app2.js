@@ -30,15 +30,14 @@ let showdetails = queryResponse => {
 
 
 	const close_approach_data = queryResponse.near_earth_objects[id].close_approach_data
-	console.log(close_approach_data.length)
 
 	for (i = 0; i < close_approach_data.length; i++){
 		const dates = `${queryResponse.near_earth_objects[id].close_approach_data[i].close_approach_date_full}`
 
-		const velocity = `${queryResponse.near_earth_objects[id].close_approach_data[i].relative_velocity.kilometers_per_second}`
+		var velocity = `${queryResponse.near_earth_objects[id].close_approach_data[i].relative_velocity.kilometers_per_second}`
 
 		document.querySelector(`.js-astroid-approach`).innerHTML += `<p>${dates}  </p>`;
-		document.querySelector(`.js-astroid-velocity`).innerHTML += `<p>${velocity} Km / Seconde  </p>`;
+		document.querySelector(`.js-astroid-velocity`).innerHTML += `<p>${Number(velocity).toFixed(2)} Km on ${dates}  </p>`;
 
 	}
 
