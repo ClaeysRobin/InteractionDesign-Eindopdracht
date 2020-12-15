@@ -53,7 +53,7 @@ let showResult = queryResponse => {
 
 	// get top 10 astroids
 	var i;
-	var leftspace = -10;
+	var leftspace = -5;
 	for (i = 0; i < 10; i++){
 		// console.log(`${queryResponse.near_earth_objects[i].name_limited}`)
 
