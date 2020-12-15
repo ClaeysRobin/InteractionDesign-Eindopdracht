@@ -80,7 +80,7 @@ const getAPI = async () => {
 	.then((res) => res.json())
 	.catch(err => console.error(err))
 	
-	console.log(data);
+	// console.log(data);
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/home.html"){
