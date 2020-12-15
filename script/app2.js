@@ -83,11 +83,11 @@ const getAPI = async () => {
 	//console.log(data);
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
-	if (window.location.pathname == "/home.html"){
+	if (window.location.pathname == "/InteractionDesign-Eindopdracht/home.html"){
 		showResult(data);
 	  }
 
-	if (window.location.pathname == "/detail.html"){
+	if (window.location.pathname == "/InteractionDesign-Eindopdracht/detail.html"){
       showdetails(data);
     }
 };
