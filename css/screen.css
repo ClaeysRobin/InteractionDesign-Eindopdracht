@@ -108,6 +108,25 @@ html, body {
     overflow:hidden;
 }
 
+.spaceImgdetail{
+    /* background */
+    background-image: url("../img/png/space.png");
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-height: 500px){
+    .spaceImgdetail{
+        /* background */
+        background-image: url("../img/png/space.png");
+        background-repeat: space;
+
+    }
+}
 
 *,
 *:before,
@@ -698,9 +717,6 @@ input::placeholder {
     grid-gap: var(--global-whitespace-lg);
     margin-bottom: var(--global-whitespace-md);
 
-    border-radius: 10px;
-    background-color: var(--color-back);
-
     position: relative;
     width: 100%;
 }
@@ -708,8 +724,6 @@ input::placeholder {
 .c-dashboard__item {
     width: 100%;
     box-shadow: var(--global-box-shadow);
-    /* background-color: var(--color-back); */
-
 }
 
 @media screen and (min-width: 62em) {
@@ -727,7 +741,12 @@ input::placeholder {
 */
 
 .c-card {
-    width: 100%;
+    /* width: 100%; */
+
+    background-color: var(--color-back);
+    border-radius: 10px;
+    margin: 16px;
+    padding: 10px;
 }
 
 .c-card__header {

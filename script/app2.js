@@ -89,6 +89,15 @@ const getAPI = async () => {
 
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/detail.html"){
       showdetails(data);
+	}
+	
+	//test
+	if (window.location.pathname == "/home.html"){
+		showResult(data);
+	  }
+
+	if (window.location.pathname == "/detail.html"){
+      showdetails(data);
     }
 };
 
