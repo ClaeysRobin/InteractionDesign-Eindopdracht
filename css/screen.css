@@ -113,20 +113,13 @@ html, body {
     background-image: url("../img/png/space.png");
     background-repeat: no-repeat;
     position: relative;
-    background-position: center;
+    /* background-position: relative; */
     background-size: cover;
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
 }
 
-@media (min-height: 500px){
-    .spaceImgdetail{
-        /* background */
-        background-image: url("../img/png/space.png");
-        background-repeat: space;
-
-    }
-}
 
 *,
 *:before,
