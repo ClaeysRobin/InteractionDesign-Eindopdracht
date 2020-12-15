@@ -36,10 +36,31 @@
     --sun-height: 250px;
 
     --astroid-width: 200%;
+    --astroiddetail-width: 150%;
 
     --ufo-width: 100%;
     /* --ufo-height: 25px; */
     
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 /*------------------------------------*\
@@ -557,6 +578,21 @@ input::placeholder {
     width: 100%;
 }
 
+.c-astroiddetail{
+    width: var(--astroiddetail-width);
+    height: var(--astroid-height);
+}
+
+.c-astroidcontainerdetail{
+    position: relative;
+    width: 50%;
+}
+
+.c-astroid-dates{
+    height: 250px;
+    overflow: scroll;
+}
+
 /*
     Component: UFO
     ---
@@ -656,6 +692,78 @@ input::placeholder {
 
     transform: translateY(22px)
 }
+
+.c-dashboard {
+    display: grid;
+    grid-gap: var(--global-whitespace-lg);
+    margin-bottom: var(--global-whitespace-md);
+
+    border-radius: 10px;
+    background-color: var(--color-back);
+
+    position: relative;
+    width: 100%;
+}
+
+.c-dashboard__item {
+    width: 100%;
+    box-shadow: var(--global-box-shadow);
+    /* background-color: var(--color-back); */
+
+}
+
+@media screen and (min-width: 62em) {
+    .c-dashboard {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .c-dashboard__item {
+        grid-column: 2 / -2;
+    }
+}
+
+/*
+    Component: Card
+*/
+
+.c-card {
+    width: 100%;
+}
+
+.c-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: var(--global-whitespace-md); */
+}
+
+.c-card__title {
+    margin-bottom: 0;
+    /* font-size: 18px;
+    line-height: 25px; */
+    font-size: 1.2rem;
+    line-height: calc(var(--global-baseline) * 5);
+}
+
+/* .c-card__body {
+    height: 100%;
+} */
+
+
+.c-card__header,
+.c-card__body {
+    padding: var(--global-whitespace-md);
+}
+
+.c-card__header {
+    padding-bottom: 0;
+}
+
+.c-card__header > *:last-child,
+.c-card__body > *:last-child {
+    margin-bottom: 0;
+}
+
 
 /*
     Component: CTA link
@@ -916,6 +1024,53 @@ input::placeholder {
         flex-basis: calc(100% / 6 * 5) !important;
     }
 }
+
+/*
+    Utilities: span
+    Utility classes to span grid items across the x and y axis
+*/
+
+/* x: horizontal */
+
+@media (min-width: 62em) {
+
+    .u-x-span-2-bp3 {
+        grid-column: span 2;
+    }
+
+    .u-x-span-3-bp3 {
+        grid-column: span 3;
+    }
+
+    .u-x-span-4-bp3 {
+        grid-column: span 4;
+    }
+
+    .u-x-span-6-bp3 {
+        grid-column: span 6;
+    }
+
+    .u-x-span-8-bp3 {
+        grid-column: span 8;
+    }
+
+    .u-x-span-9-bp3 {
+        grid-column: span 9;
+    }
+
+}
+
+/* y: vertical */
+
+@media (min-width: 62em) {
+
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
+
+}
+
+
 
 /*------------------------------------*\
 #STATES
