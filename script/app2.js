@@ -113,15 +113,7 @@ const getAPI = async () => {
 	  ListenToToggle();
 	}
 	
-	//test
-	if (window.location.pathname == "/index.html"){
-		showResult(data);
-	}
-
-	if (window.location.pathname == "/detail.html"){
-	  showdetails(data);
-	  ListenToToggle();
-    }
+	
 };
 
 document.addEventListener('DOMContentLoaded', function() {
