@@ -28,7 +28,7 @@ const ListenToToggle = function () {
 
 	btnHome.addEventListener('click', function () {
 		var url = window.location.href.split("?")[0]
-		url = url.replace("detail","Index")
+		url = url.replace("detail","index")
 		setTimeout(function(){window.location.href = url}, 1500);
 	})
 }
@@ -114,7 +114,7 @@ const getAPI = async () => {
 	}
 	
 	//test
-	if (window.location.pathname == "/Index.html"){
+	if (window.location.pathname == "/index.html"){
 		showResult(data);
 	}
 
