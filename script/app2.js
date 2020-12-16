@@ -87,7 +87,7 @@ let showResult = queryResponse => {
 		// plaats de astroiden
 		space.setAttribute('style', `bottom: ${afstand/200000}px; left:  ${leftspace += 9}%;`);
 		
-		space.innerHTML = `<a href="Detail.html?id=${i}"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
+		space.innerHTML = `<a href="detail.html?id=${i}"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
 	}
 };
 
@@ -102,7 +102,6 @@ const getAPI = async () => {
 	.catch(err => console.error(err))
 	
 	// console.log(data);
-	console.log(window.location)
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){
