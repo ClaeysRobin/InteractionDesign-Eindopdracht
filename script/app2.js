@@ -102,11 +102,12 @@ const getAPI = async () => {
 	.catch(err => console.error(err))
 	
 	// console.log(data);
+	console.log(window.location)
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){
 		showResult(data);
-	  }
+	}
 
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/detail.html"){
 	  showdetails(data);
