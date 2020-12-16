@@ -324,10 +324,16 @@ input::placeholder {
 */
 
 .o-row {
-    display: flow-root; /* New solution! Fixes margin collapsing */
     position: relative;
-    padding: 24px;
+    padding: 24px 24px 0;
 }
+
+.o-row--center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
 
 /* size modifiers */
 
@@ -343,8 +349,7 @@ input::placeholder {
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
+        margin:auto;
     }
 
     .o-row--md {
@@ -367,7 +372,8 @@ input::placeholder {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 71em; /* 71 * 18px = 1278px */
+    max-width: 79.5em; /* 79.5 * 16px = 1272 */
+    width: 100%;
 }
 
 /*
@@ -676,21 +682,6 @@ input::placeholder {
     
 }
 
-/*
-    Component: App
-    ---
-    Main app wrapper
-*/
-.c-app{
-   max-width: 359px;
-   margin: auto;
-}
-
-.c-app__summary{
-    font-size: 28px;
-    line-height: 40px;
-
-}
 
 /*
     Component: Horizon
@@ -774,10 +765,9 @@ input::placeholder {
 */
 
 .c-card {
-    width: auto;
+    width: 100%;
     background-color: var(--color-back);
     border-radius: 10px;
-    margin: var(--global-whitespace-md);
     padding: 10px;
     opacity: 90%;
 }

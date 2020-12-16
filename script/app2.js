@@ -118,7 +118,7 @@ const getAPI = async () => {
 		showResult(data);
 	}
 
-	if (window.location.pathname == "/Detail.html"){
+	if (window.location.pathname == "/detail.html"){
 	  showdetails(data);
 	  ListenToToggle();
     }
