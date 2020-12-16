@@ -734,7 +734,7 @@ input::placeholder {
 
 .c-dashboard {
     display: grid;
-    grid-gap: var(--global-whitespace-xs);
+    grid-gap: var(--global-whitespace-sm);
     /* margin-bottom: var(--global-whitespace-md); */
 
     position: relative;
@@ -768,6 +768,7 @@ input::placeholder {
     width: 100%;
     background-color: var(--color-back);
     border-radius: 10px;
+    margin: 10px;
     padding: 10px;
     opacity: 90%;
 }
@@ -946,12 +947,12 @@ input::placeholder {
 */
 
 .c-button__forward { 
-    margin: 8px;   
+    margin: auto;   
     float: right;
 }
 
 .c-button__back { 
-    margin: 8px;   
+    margin: auto;   
     float: left;
 }
 
