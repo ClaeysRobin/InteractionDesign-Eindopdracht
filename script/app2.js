@@ -1,7 +1,6 @@
 const key = 'j7Ek11xfTcE2ugN1xo8iEwdrZXOnTsSQVPwQjYoY'
 var id = "";
 
-// _ = helper functions
 
 const ListenToToggle = function () {
 	console.log("ListenToToggle initiated");
@@ -87,7 +86,7 @@ let showResult = queryResponse => {
 		// plaats de astroiden
 		space.setAttribute('style', `bottom: ${afstand/200000}px; left:  ${leftspace += 9}%;`);
 		
-		space.innerHTML = `<a href="detail.html?id=${i}"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
+		space.innerHTML = `<a href="Detail.html?id=${i}"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
 	}
 };
 
@@ -104,21 +103,21 @@ const getAPI = async () => {
 	// console.log(data);
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
-	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){
+	if (window.location.pathname == "/InteractionDesign-Eindopdracht/Index.html"){
 		showResult(data);
 	  }
 
-	if (window.location.pathname == "/InteractionDesign-Eindopdracht/detail.html"){
+	if (window.location.pathname == "/InteractionDesign-Eindopdracht/Detail.html"){
 	  showdetails(data);
 	  ListenToToggle();
 	}
 	
 	//test
-	if (window.location.pathname == "/index.html"){
+	if (window.location.pathname == "/Index.html"){
 		showResult(data);
 	}
 
-	if (window.location.pathname == "/detail.html"){
+	if (window.location.pathname == "/Detail.html"){
 	  showdetails(data);
 	  ListenToToggle();
     }
