@@ -3,7 +3,6 @@ var id = "";
 
 
 const ListenToToggle = function () {
-	console.log("ListenToToggle initiated");
 	btnForward = document.querySelector(`.js-toggle-forward`);
 	btnBack = document.querySelector(`.js-toggle-back`);
 
@@ -12,19 +11,18 @@ const ListenToToggle = function () {
 		console.log(window.location)
 		newUrl += window.location.pathname;
 		newUrl += `?id=${parseInt(id) + 1}`
-		console.log(newUrl)
+		
 		setTimeout(function(){window.location.href = newUrl}, 1500);
-		// window.location.href = newUrl
+
 	})
 
 	btnBack.addEventListener('click', function () {
 		var newUrl = window.location.origin;
 		newUrl += window.location.pathname;
 		newUrl += `?id=${parseInt(id) - 1}`
-		console.log(newUrl)
 
 		setTimeout(function(){window.location.href = newUrl}, 1500);
-		// window.location.href = newUrl
+
 	})
 }
 
@@ -41,7 +39,6 @@ let showdetails = queryResponse => {
 	const hazardous = `${queryResponse.near_earth_objects[id].is_potentially_hazardous_asteroid}`;
 	const nasa_link = `${queryResponse.near_earth_objects[id].nasa_jpl_url}`;
 
-	console.log(nasa_link)
 	// close aproach date uit json halen
 	// ${queryResponse.near_earth_objects[0].close_approach_data[0].close_approach_date}
 
@@ -70,9 +67,6 @@ let showdetails = queryResponse => {
 
 // 3 Met de data van de API kunnen we de app opvullen
 let showResult = queryResponse => {
-	console.log({queryResponse});
-	// console.log(`${queryResponse.near_earth_objects[0].close_approach_data[0].miss_distance.lunar}`)
-
 	// get top 10 astroids
 	var i;
 	var leftspace = -5;
@@ -101,7 +95,6 @@ const getAPI = async () => {
 	.then((res) => res.json())
 	.catch(err => console.error(err))
 	
-	// console.log(data);
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){

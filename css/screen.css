@@ -795,7 +795,7 @@ input::placeholder {
 
 .c-card__body {
     width:auto;
-    margin: 0;
+    padding-top: 20px;
 }
 
 .c-card__landing{
@@ -826,11 +826,7 @@ input::placeholder {
     overflow: auto; /* Fix margin collapse */
 }
 
-.c-card__footer {   
-    text-align: center;
-    border-top: 1px solid var(--card__footer-borderColor);
-    width: 100%;
-}
+
 
 /* 
     Component: landingpage
@@ -934,10 +930,13 @@ input::placeholder {
 }
 
 .c-link-nasa{
-    /* display: flex;
-    justify-content:center;
-    align-items: center; */
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    margin: 0;
+
+    
 }
 
 /*
