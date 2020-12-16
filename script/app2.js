@@ -1,25 +1,47 @@
 const key = 'j7Ek11xfTcE2ugN1xo8iEwdrZXOnTsSQVPwQjYoY'
+var id = "";
 
 // _ = helper functions
 
+const ListenToToggle = function () {
+	console.log("ListenToToggle initiated");
+	btnForward = document.querySelector(`.js-toggle-forward`);
+	btnBack = document.querySelector(`.js-toggle-back`);
 
+	btnForward.addEventListener('click', function () {
+		var newUrl = window.location.origin;
+		newUrl += window.location.pathname;
+		newUrl += `?id=${parseInt(id) + 1}`
+		console.log(newUrl)
+		setTimeout(function(){window.location.href = newUrl}, 1500);
+		// window.location.href = newUrl
+	})
+
+	btnBack.addEventListener('click', function () {
+		var newUrl = window.location.origin;
+		newUrl += window.location.pathname;
+		newUrl += `?id=${parseInt(id) - 1}`
+		console.log(newUrl)
+
+		setTimeout(function(){window.location.href = newUrl}, 1500);
+		// window.location.href = newUrl
+	})
+}
 
 let showdetails = queryResponse => {
 	// console.log("show details");
 	// console.log(`${queryResponse.near_earth_objects[0].close_approach_data[0].close_approach_date}`)
 
-	
-
-	
-
 	const urlParams = new URLSearchParams(window.location.search);
-	const id = urlParams.get('id');
+	id = urlParams.get('id');
 	// console.log(id)
 
-	const naam = `${queryResponse.near_earth_objects[id].name}`
-	const naamltd = `${queryResponse.near_earth_objects[id].name_limited}`
-	const hazardous = `${queryResponse.near_earth_objects[id].is_potentially_hazardous_asteroid}`
+	const naam = `${queryResponse.near_earth_objects[id].name}`;
+	const naamltd = `${queryResponse.near_earth_objects[id].name_limited}`;
+	const hazardous = `${queryResponse.near_earth_objects[id].is_potentially_hazardous_asteroid}`;
+	const nasa_link = `${queryResponse.near_earth_objects[id].nasa_jpl_url}`;
 
+	console.log(nasa_link)
 	// close aproach date uit json halen
 	// ${queryResponse.near_earth_objects[0].close_approach_data[0].close_approach_date}
 
@@ -27,6 +49,7 @@ let showdetails = queryResponse => {
 	document.querySelector(`.js-astroid-name`).innerHTML = naam;
 	document.querySelector(`.js-astroid-namelimited`).innerHTML = naamltd;
 	document.querySelector(`.js-astroid-hazardous`).innerHTML = hazardous;
+	document.querySelector(`.js-astroid-link`).setAttribute("href",nasa_link);
 
 
 	const close_approach_data = queryResponse.near_earth_objects[id].close_approach_data
@@ -45,10 +68,9 @@ let showdetails = queryResponse => {
 	
 };
 
-
 // 3 Met de data van de API kunnen we de app opvullen
 let showResult = queryResponse => {
-	// console.log({queryResponse});
+	console.log({queryResponse});
 	// console.log(`${queryResponse.near_earth_objects[0].close_approach_data[0].miss_distance.lunar}`)
 
 	// get top 10 astroids
@@ -82,21 +104,23 @@ const getAPI = async () => {
 	// console.log(data);
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
-	if (window.location.pathname == "/InteractionDesign-Eindopdracht/home.html"){
+	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){
 		showResult(data);
 	  }
 
 	if (window.location.pathname == "/InteractionDesign-Eindopdracht/detail.html"){
-      showdetails(data);
+	  showdetails(data);
+	  ListenToToggle();
 	}
 	
 	//test
-	if (window.location.pathname == "/home.html"){
+	if (window.location.pathname == "/index.html"){
 		showResult(data);
-	  }
+	}
 
 	if (window.location.pathname == "/detail.html"){
-      showdetails(data);
+	  showdetails(data);
+	  ListenToToggle();
     }
 };
 
