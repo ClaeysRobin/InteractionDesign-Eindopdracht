@@ -642,9 +642,10 @@ input::placeholder {
     width: 50%;
 }
 
-.c-astroid-dates{
+.c-astroid-list{
     height: 250px;
     overflow: scroll;
+    text-align: center;
 }
 
 /*
@@ -1013,16 +1014,6 @@ input::placeholder {
     }
 }
 
-/*
-    Component: figure
-    ---
-    Special type of figure and figcaption
-*/
-
-.c-figure {
-    display: flex;
-    justify-content: center;
-}
 
 /*
     Component: Frame
