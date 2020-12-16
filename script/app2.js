@@ -9,6 +9,7 @@ const ListenToToggle = function () {
 
 	btnForward.addEventListener('click', function () {
 		var newUrl = window.location.origin;
+		console.log(window.location)
 		newUrl += window.location.pathname;
 		newUrl += `?id=${parseInt(id) + 1}`
 		console.log(newUrl)
