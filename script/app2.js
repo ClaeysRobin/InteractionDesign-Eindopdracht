@@ -5,6 +5,7 @@ var id = "";
 const ListenToToggle = function () {
 	btnForward = document.querySelector(`.js-toggle-forward`);
 	btnBack = document.querySelector(`.js-toggle-back`);
+	btnHome = document.querySelector(`.js-toggle-Home`);
 
 	btnForward.addEventListener('click', function () {
 		var newUrl = window.location.origin;
@@ -23,6 +24,12 @@ const ListenToToggle = function () {
 
 		setTimeout(function(){window.location.href = newUrl}, 1500);
 
+	})
+
+	btnHome.addEventListener('click', function () {
+		var url = window.location.href.split("?")[0]
+		url = url.replace("detail","Index")
+		setTimeout(function(){window.location.href = url}, 1500);
 	})
 }
 

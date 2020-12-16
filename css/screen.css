@@ -624,6 +624,12 @@ input::placeholder {
 .c-astroid{
     width: var(--astroid-width);
     height: var(--astroid-height);
+    transition: fill 0.15s, transform 0.5s ease-out;
+}
+
+.c-astroid:hover{
+    transform: scale(2);
+    -webkit-transform: scale(2);
 }
 
 .c-astroidcontainer{
@@ -656,6 +662,7 @@ input::placeholder {
 .c-ufo{
     width: var(--ufo-width);
     height: var(--ufo-height);
+    transition: fill 0.15s, transform 0.5s ease-out;
 }
 
 .c-ufo-move{
@@ -681,6 +688,10 @@ input::placeholder {
     90%  {left:45%; top:-30px;}
     100% {left:5%; top:-50px;}
     
+}
+
+.c-ufo:hover{
+    transform: scale(2);
 }
 
 
