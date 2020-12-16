@@ -26,6 +26,13 @@
     /* colors */
     --color-back: #011125;
     --color-front: #ffffff;
+    --color-back-with-opacity : rgba(1,17,37,0.75);
+
+    --global-color-neutral-xx-light: #FFFFFF;
+    --global-color-neutral-x-light: #DCDAE0;
+    --global-color-neutral-light: #616466;
+    --global-color-neutral: #47454D;
+    --global-color-neutral-dark: #17191A;
 
     /* opacity */
 
@@ -768,12 +775,10 @@ input::placeholder {
 
 .c-card {
     width: auto;
-
     background-color: var(--color-back);
     border-radius: 10px;
-    margin: 16px;
+    margin: var(--global-whitespace-md);
     padding: 10px;
-
     opacity: 90%;
 }
 
@@ -786,11 +791,17 @@ input::placeholder {
 
 .c-card__title {
     margin-bottom: 0;
-    /* font-size: 18px;
-    line-height: 25px; */
-    font-size: 1.2rem;
+    font-size: 2rem;
     line-height: calc(var(--global-baseline) * 5);
+
 }
+
+.c-card__description {
+    font-size: 1rem;
+    line-height: var(--global-whitespace);
+    color: var(--global-color-neutral-x-light);
+    text-align: center;
+} 
 
 .c-card__body {
     width:auto;
@@ -801,9 +812,9 @@ input::placeholder {
     position: relative;
     display: flex;
     align-items: center;
-    width: 50%;
+    margin: auto;
+    width: 100%;
 }
-
 
 .c-card__header,
 .c-card__body {
@@ -829,6 +840,72 @@ input::placeholder {
     text-align: center;
     border-top: 1px solid var(--card__footer-borderColor);
     width: 100%;
+}
+
+/* 
+    Component: landingpage
+*/
+
+
+  
+  .c-input__email {
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    padding-left: 24px;
+    border-color: var(--global-color-neutral-xx-light);
+    border-style: solid;
+    background-color: transparent;
+    color: var(--global-color-neutral-xx-light);
+    outline: none;
+
+    margin-bottom: var(--global-whitespace-xs);
+  }
+  
+  
+  .c-input__register {
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    text-align: center;
+    background-color:transparent;
+    border-color: var(--global-color-neutral-xx-light);
+    color: var(--global-color-neutral-xx-light);
+    outline: none;
+    cursor: pointer;
+    margin-top: var(--global-whitespace-xs);
+  }
+
+  @media (min-width: 992px) {
+
+    .c-card__title{
+        font-size: 3rem;
+        margin-bottom: var(--global-whitespace-md) ;
+        text-align: center;
+    }
+
+    .c-card__description{
+        font-size: 1.5rem;
+    }
+    .c-input__email {
+        width: 25%;
+        margin-right: var(--global-whitespace-lg);
+      }
+      
+      
+      .c-input__register {
+        width: 25%;
+      }
+
+      .c-card__register{
+        display: flex;
+        justify-content:center;
+
+        margin-top: var(--global-whitespace-md);
+        
+    }
 }
 
 
@@ -956,6 +1033,42 @@ input::placeholder {
     display: flex;
     justify-content: center;
 }
+
+/*
+    Component: Frame
+    ---
+    Frame on landingspage.html
+*/
+
+.c-frame {
+    width: 63.19em;
+    height: 36.19em;
+    background-color: var(--color-back-with-opacity);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* @media screen and (min-width: 1920px) {
+    .c-frame {
+    } */
+  
+  .c-form{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-top: 32px;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 992px) {
+    .c-form-landing{
+        margin: var(--global-whitespace-xxl);
+    }
+}
+  
 
 /*------------------------------------*\
 #UTILITIES
