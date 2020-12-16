@@ -104,7 +104,7 @@ const getAPI = async () => {
 	// console.log(data);
 	
 	// Als dat gelukt is, gaan we naar onze showResult functie.
-	if (window.location.pathname == "/InteractionDesign-Eindopdracht/Index.html"){
+	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){
 		showResult(data);
 	  }
 
