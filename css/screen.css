@@ -111,21 +111,8 @@ html, body {
     margin: 0;
   }
 
-.spaceImg{
-    /* background */
-    background-image: url("../img/png/space.png");
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-
-    overflow:hidden;
-}
 
 .spaceImgdetail{
-    /* background */
     background-image: url("../img/png/space.png");
     background-repeat: no-repeat;
     position: relative;
@@ -135,6 +122,16 @@ html, body {
     height: 100%;
     width: 100%;
 
+}
+
+@media (min-width: 992px) {
+    .spaceImgdetail{
+       overflow: hidden;
+    }
+}
+
+.spaceimg-Overflow{
+    overflow: hidden;
 }
 
 .animation-element {
@@ -572,6 +569,11 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
+.c-table--visible {
+    transform: translateX(-100vw);
+}
+
+  
 /*
     Component: Logo
     ---

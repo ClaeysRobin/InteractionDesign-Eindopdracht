@@ -1,11 +1,15 @@
 const key = 'j7Ek11xfTcE2ugN1xo8iEwdrZXOnTsSQVPwQjYoY'
 var id = "";
+var data = "";
 
 
 const ListenToToggle = function () {
 	btnForward = document.querySelector(`.js-toggle-forward`);
 	btnBack = document.querySelector(`.js-toggle-back`);
 	btnHome = document.querySelector(`.js-toggle-Home`);
+	btnDetail = document.querySelector(`.c-astroid-detail`);
+
+	
 
 	btnForward.addEventListener('click', function () {
 		var newUrl = window.location.origin;
@@ -27,27 +31,45 @@ const ListenToToggle = function () {
 	})
 
 	btnHome.addEventListener('click', function () {
-		var url = window.location.href.split("?")[0]
-		url = url.replace("detail","index")
-		setTimeout(function(){window.location.href = url}, 1500);
+		// var url = window.location.href.split("?")[0]
+		// url = url.replace("detail","index")
+		// setTimeout(function(){window.location.href = url}, 1500);
+
+		const overflow = document.querySelector(`.spaceImgdetail`);
+		const detail = document.querySelector(`.c-table-detail`);
+		const overview = document.querySelector(`.c-table-overview`);
+
+		detail.classList.add("c-table--visible");
+		overflow.classList.add("spaceimg-Overflow");
+		overview.classList.remove("c-table--visible");
+		console.log("545451")
+	})
+
+	btnDetail.addEventListener('click', function () {
+		// var url = window.location.href.split("?")[0]
+		// url = url.replace("detail","index")
+		// setTimeout(function(){window.location.href = url}, 1500);
+
+		const overflow = document.querySelector(`.spaceImgdetail`);
+		const detail = document.querySelector(`.c-table-detail`);
+		const test = document.querySelector(`.c-table-overview `);
+
+		detail.classList.remove("c-table--visible");
+		test.classList.add("c-table--visible");
+		overflow.classList.remove("spaceimg-Overflow");
+
 	})
 }
 
 let showdetails = queryResponse => {
-	// console.log("show details");
-	// console.log(`${queryResponse.near_earth_objects[0].close_approach_data[0].close_approach_date}`)
-
 	const urlParams = new URLSearchParams(window.location.search);
 	id = urlParams.get('id');
-	// console.log(id)
+	
 
 	const naam = `${queryResponse.near_earth_objects[id].name}`;
 	const naamltd = `${queryResponse.near_earth_objects[id].name_limited}`;
 	const hazardous = `${queryResponse.near_earth_objects[id].is_potentially_hazardous_asteroid}`;
 	const nasa_link = `${queryResponse.near_earth_objects[id].nasa_jpl_url}`;
-
-	// close aproach date uit json halen
-	// ${queryResponse.near_earth_objects[0].close_approach_data[0].close_approach_date}
 
 
 	document.querySelector(`.js-astroid-name`).innerHTML = naam;
@@ -101,17 +123,10 @@ const getAPI = async () => {
 	const data = await fetch(url)
 	.then((res) => res.json())
 	.catch(err => console.error(err))
-	
-	
-	// Als dat gelukt is, gaan we naar onze showResult functie.
-	if (window.location.pathname == "/InteractionDesign-Eindopdracht/index.html"){
-		showResult(data);
-	}
 
-	if (window.location.pathname == "/InteractionDesign-Eindopdracht/detail.html"){
-	  showdetails(data);
-	  ListenToToggle();
-	}
+	showResult(data);
+	showdetails(data);
+	
 	
 	
 };
@@ -120,5 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	console.log("dom loaded")
 	// 1 We will query the API.
 	getAPI();
+	ListenToToggle();
 
 });
