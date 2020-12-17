@@ -39,10 +39,15 @@ const ListenToToggle = function () {
 		const detail = document.querySelector(`.c-table-detail`);
 		const overview = document.querySelector(`.c-table-overview`);
 
-		detail.classList.add("c-table--visible");
-		overflow.classList.add("spaceimg-Overflow");
-		overview.classList.remove("c-table--visible");
-		console.log("545451")
+		setTimeout(function(){
+			detail.classList.add("c-table--visible");
+			overflow.classList.add("spaceimg-Overflow");
+			overview.classList.remove("c-table--visible");
+		}, 1500);
+		// detail.classList.add("c-table--visible");
+		// overflow.classList.add("spaceimg-Overflow");
+		// overview.classList.remove("c-table--visible");
+
 	})
 
 	btnDetail.addEventListener('click', function () {
