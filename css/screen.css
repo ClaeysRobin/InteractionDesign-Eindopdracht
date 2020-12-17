@@ -785,6 +785,7 @@ input::placeholder {
     margin: 10px;
     padding: 10px;
     opacity: 90%;
+    text-align: center;
 }
 
 .c-card__header {
@@ -796,8 +797,10 @@ input::placeholder {
 
 .c-card__title {
     margin-bottom: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: calc(var(--global-baseline) * 5);
+    text-align: center;
+    font-weight: 600;
 
 }
 
@@ -880,9 +883,14 @@ input::placeholder {
   }
 
   @media (min-width: 992px) {
+    .c-card{
+        font-size: 1.5rem;
+        text-align: center;
+    }
 
     .c-card__title{
-        font-size: 3rem;
+        font-size: 2rem;
+        font-weight: 600;
         margin-bottom: var(--global-whitespace-md) ;
         text-align: center;
     }

@@ -79,7 +79,7 @@ let showdetails = queryResponse => {
 
 	document.querySelector(`.js-astroid-name`).innerHTML = naam;
 	document.querySelector(`.js-astroid-namelimited`).innerHTML = naamltd;
-	document.querySelector(`.js-astroid-hazardous`).innerHTML = hazardous;
+	document.querySelector(`.js-astroid-hazardous`).innerHTML = hazardous.toUpperCase();
 	document.querySelector(`.js-astroid-link`).setAttribute("href",nasa_link);
 
 
