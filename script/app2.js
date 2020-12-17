@@ -110,7 +110,7 @@ let showResult = queryResponse => {
 		// plaats de astroiden
 		space.setAttribute('style', `bottom: ${afstand/200000}px; left:  ${leftspace += 9}%;`);
 		
-		space.innerHTML = `<a href="detail.html?id=${i}"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
+		space.innerHTML = `<a href="index.html?id=${i}"><img src="img/png/astroid.png" alt="astroid" class="c-astroid"></a>`
 	}
 };
 
